@@ -39,15 +39,20 @@ public class Banana extends Actor
     public void resetBanana() 
     {
         int num = Greenfoot.getRandomNumber(2); 
+        count += 1+Greenfoot.getRandomNumber(2);
+            List<Score> scores = getWorld().getObjects(Score.class);
+            if (!scores.isEmpty()) 
+            {
+                Score score = scores.get(0);
+                score.incrementScore(100);
+            }
         if (num == 0) 
         {
             setLocation(600, 100);
-            count += 1+Greenfoot.getRandomNumber(2);
         }
         else 
         {
             setLocation(600, 300);
-            count += 1+Greenfoot.getRandomNumber(2);
         }
         if (count >= 5) 
         {

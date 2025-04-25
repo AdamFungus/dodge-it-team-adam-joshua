@@ -5,6 +5,7 @@ public class MyWorld extends World {
     private Banana banana;
     public MyWorld() {
         super(600, 400, 1);
+        Banana.increase = 3;
         hero = new Hero();
         addObject(hero, 100, 100);
         
