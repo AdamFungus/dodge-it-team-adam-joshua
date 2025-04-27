@@ -3,21 +3,24 @@ import java.util.List;
 
 public class HighScore extends Actor
 {
-    private int highScore = 0;
+    private static int savedHighScore = 0;
+    private int highScore;
 
     public HighScore()
     {
+        highScore = savedHighScore;
         updateHighscore();
     }
 
     public void act()
     {
         List<Score> scores = getWorld().getObjects(Score.class);
-        
+
         if (!scores.isEmpty()) {
             Score currentScore = scores.get(0);
             if (currentScore.getScore() > highScore) {
                 highScore = currentScore.getScore();
+                savedHighScore = highScore;
                 updateHighscore();
             }
         }
@@ -30,7 +33,7 @@ public class HighScore extends Actor
         img.drawString("High Score: " + highScore, 5, 20);
         setImage(img);
     }
-    
+
     public int getHighScore() {
         return highScore;
     }
