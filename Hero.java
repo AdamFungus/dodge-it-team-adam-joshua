@@ -16,6 +16,14 @@ public class Hero extends Actor
     public void act()
     {
         // Add your action code here.
+        String key = Greenfoot.getKey();
+        if (key != null)
+       {
+           if (key.equals("space"))
+           {
+               atTop = !atTop;
+           }
+       }
         if(Greenfoot.mouseClicked(null))  
         {
             atTop = !atTop;
