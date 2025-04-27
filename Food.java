@@ -36,7 +36,7 @@ public class Food extends Actor
             if (!scores.isEmpty()) 
             {
                 Score score = scores.get(0);
-                score.incrementScore(100);
+                score.incrementScore(1000);
             }
             Banana.increase -= 1 + Greenfoot.getRandomNumber(3);
             getWorld().removeObject(this);
